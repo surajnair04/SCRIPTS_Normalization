@@ -33,6 +33,13 @@ pashto_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzواهدرنلیيېمک�
 pashto_vowels = "واېيىیےۍ"
 pashto_diacs = "ًٌٍَُِّْ"
 
+#farsi_alphabet = "ءآأؤئابپتثجچححخدذرزژسشصضطظعغفقکگلمنهویًٔ_"
+farsi_alphabet = "ﻭﺎﻫﺩﺮﻨﻟیﻱېﻡکﺕپﺲﺒﺧﺶﻏچﺯﻑﻉﺡﺞﻗﺹۍژﻂﻜﺌﺿﻰﻇﺙﺫﺁ۶گہﺅےﺀﺓﺃھۀﺇﺉًَﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_"
+#farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_'|^W}AJCH+$SDTZEQGF%_="
+farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzﻭﺎﻫﺩﺮﻨﻟیﻱېﻡکﺕپﺲﺒﺧﺶﻏچﺯﻑﻉﺡﺞﻗﺹۍژﻂﻜﺌﺿﻰﻇﺙﺫﺁ۶گہﺅےﺀﺓﺃھۀﺇﺉًَﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_'|^W}AJCH+$SDTZEQGF%_="
+farsi_vowels = "‬ًًٌَُِّْﻭﺍېﻱﻯیےۍ"
+farsi_diacs = ""
+
 alphabet_map = {}
 alphabet_map["ENG"] = english_alphabet;
 alphabet_map["TGL"] = tagalog_alphabet;
@@ -43,6 +50,8 @@ alphabet_map["BUL"] = bulgarian_alphabet;
 alphabet_map["BUL_ROM"] = bulgarian_romanized_alphabet;
 alphabet_map["PUS"] = pashto_alphabet;
 alphabet_map["PUS_ROM"] = pashto_romanized_alphabet;
+alphabet_map["FAS"] = farsi_alphabet;
+alphabet_map["FAS_ROM"] = farsi_romanized_alphabet;
 
 vowels_map = {}
 vowels_map["ENG"] = english_vowels;
@@ -52,6 +61,7 @@ vowels_map["SOM"] = somali_vowels;
 vowels_map["LIT"] = lithuanian_vowels;
 vowels_map["BUL"] = bulgarian_vowels;
 vowels_map["PUS"] = pashto_vowels;
+vowels_map["FAS"] = farsi_vowels;
 
 ''' Special cases not handled by the default unicode undiacritization '''
 latin_character_mappings = {
@@ -93,6 +103,42 @@ pashto_character_mappings = {
     'أ': 'ا',
     'ة': 'ه',
     'ۀ': 'ه',
+}
+
+farsi_character_mappings = {
+    'ﺁ': "ا",
+    'ﺃ': "ا",
+    'ا': "آ",
+    'ٓا': "آ",
+    'ي': "ی",
+    'ﺅ': "و",
+    'ﺉ': "ی",
+    'ﭘ': "پ",
+    'ﻕ': 'ک',
+    'ﻑ': 'پ',
+    'ﻙ': 'ک',
+    'گ': 'ګ',
+    'ﺉ': 'ﺉ',
+    'ﺀ': '۶',
+    'ہ': 'ﻩ',
+    'ھ': 'ﻩ',
+    '۵': '٥',
+    '۴': '٤',
+    'ٸ': 'ﺉ',
+    'ﺅ': 'ﻭ',
+    'ﻻ': 'ﻻ',
+    'ۓ': 'ﻱ',
+    'ے': 'ﻱ',
+    'ﮮ': 'ﻱ',
+    'ۍ': 'ﻱ',
+    'ی': 'ﻱ',
+    'ﻯ': 'ﻱ',
+    'ې': 'ﻱ',
+    'ﺇ': 'ﺍ',
+    'ﺁ': 'ﺍ',
+    'ﺃ': 'ﺍ',
+    'ﺓ': 'ﻩ',
+    'ۀ': 'ﻩ',
 }
 
 #source: https://www.loc.gov/catdir/cpso/romanization/bulgarian.pdf
@@ -139,7 +185,50 @@ bulgarian_transliteration = {
     'i͡u': 'ю',
     'ĭ': 'й',
     'u̐': 'ѫ'
+}
 
+farsi_transliteration = {
+    'ء': "'",
+    'آ': "|",
+    'أ': "^",
+    'ؤ': "W",
+    'ئ': "}",
+    'ا': "A",
+    'ب': "b",
+    'پ': "p",
+    'ت': "t",
+    'ث': "v",
+    'ج': "J",
+    'چ': "C",
+    'ح': "H",
+    'خ': "x",
+    'د': "d",
+    'ذ': "+",
+    'ر': "r",
+    'ز': "z",
+    'ژ': "c",
+    'س': "s",
+    'ش': "$",
+    'ص': "S",
+    'ض': "D",
+    'ط': "T",
+    'ظ': "Z",
+    'ع': "E",
+    'غ': "g",
+    'ف': "f",
+    'ق': "q",
+    'ک': "Q",
+    'گ': "G",
+    'ل': "l",
+    'م': "m",
+    'ن': "n",
+    'ه': "h",
+    'و': "w",
+    'ی': "y",
+    'ً': "F",
+    "'": "%",
+    '_': "_",
+    '‌': "=",
 }
 
 def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=True, remove_repetitions_count=-1, remove_punct=True, remove_digits=True, remove_vowels=False, remove_diacritics=True, remove_spaces=False, remove_apostrophe=True, copy_through=True, keep_romanized_text=True):
@@ -163,12 +252,16 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
         language = "BUL"
     elif (language == '2C') or (language == 'PASHTO') or (language == 'PUS') or (language == 'PS'):
         language = "PUS"
+    elif (language == '3S') or (language == 'FARSI') or (language == 'FAS') or (language == 'FA'):
+        language = "FAS"
         
     alphabet = alphabet_map[language]
     if language == 'BUL' and keep_romanized_text:
         alphabet = alphabet_map['BUL_ROM']
     if language == 'PUS' and keep_romanized_text:
         alphabet = alphabet_map['PUS_ROM']
+    if language == 'FAS' and keep_romanized_text:
+        alphabet = alphabet_map['FAS_ROM']
     vowels = vowels_map[language]
 
     if language == "BUL" and not keep_romanized_text:
@@ -179,6 +272,10 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
     if language == "PUS":
         for key in pashto_character_mappings:
             text = re.sub(r''+key, pashto_character_mappings[key], text)
+
+    if language == "FAS":
+        for key in farsi_character_mappings:
+            text = re.sub(r''+key, farsi_character_mappings[key], text)
                 
     '''Prepare the lists of the letters to be explictily kept and removed'''
     letters_in = list(letters_to_keep)
@@ -215,7 +312,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
     '''Loop over the unique characters in the text'''
     for char in list(set(text)):
         #Special handling for zero-width non-joiner (do not replace)
-        if language == 'PUS' and ord(char) == 8204:
+        if (language == 'PUS' or language == "FAS") and ord(char) == 8204:
             continue
         if not char.isspace() and not char.isdigit() and not re.match(r"[^\w\s\'\َ\ً\ُ\ِ\ْ\ّ\ٌ\ٍ\d]", char):
             '''If the character is needed to be removed, remove it'''
@@ -239,6 +336,8 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
                 if char.lower() in latin_character_mappings:
                     char_norm = latin_character_mappings[char.lower()]
                 elif char.lower() in pashto_diacs and language == "PUS":
+                    char_norm = ''
+                elif char.lower() in farsi_diacs and language == "FAS":
                     char_norm = ''
                 elif char.lower() not in alphabet:
                     char_norm_nfd = unicodedata.normalize('NFD', char.lower())
