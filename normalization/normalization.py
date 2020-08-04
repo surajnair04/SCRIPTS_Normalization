@@ -34,7 +34,7 @@ pashto_vowels = "واېيىیےۍ"
 pashto_diacs = "ًٌٍَُِّْ"
 
 farsi_alphabet = "u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654'"
-farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_'|^W}AJCH+$SDTZEQGF%_=" + farsi_alphabet
+farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyz_'|^W}AJCH+$SDTZEQGF%_=" + farsi_alphabet
 farsi_vowels = "‬ًًٌَُِّْﻭﺍېﻱﻯیےۍ"
 farsi_diacs = ""
 
