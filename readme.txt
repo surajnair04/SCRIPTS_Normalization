@@ -1,4 +1,4 @@
-NORMALIZATION V2 - 04/2020
+NORMALIZATION V3 - 08/04/2020
 Ramy Eskander
 rnd2110@columbia.edu
 =================================
@@ -12,6 +12,7 @@ Currently Supported Languages:
 - Lithuanian
 - Bulgarian
 - Pashto
+- Farsi
 
 Usage (default config):
 ===========================
