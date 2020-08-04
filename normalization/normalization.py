@@ -33,10 +33,8 @@ pashto_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzواهدرنلیيېمک�
 pashto_vowels = "واېيىیےۍ"
 pashto_diacs = "ًٌٍَُِّْ"
 
-#farsi_alphabet = "ءآأؤئابپتثجچححخدذرزژسشصضطظعغفقکگلمنهویًٔ_"
-farsi_alphabet = "ﻭﺎﻫﺩﺮﻨﻟیﻱېﻡکﺕپﺲﺒﺧﺶﻏچﺯﻑﻉﺡﺞﻗﺹۍژﻂﻜﺌﺿﻰﻇﺙﺫﺁ۶گہﺅےﺀﺓﺃھۀﺇﺉًَﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_"
-#farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_'|^W}AJCH+$SDTZEQGF%_="
-farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzﻭﺎﻫﺩﺮﻨﻟیﻱېﻡکﺕپﺲﺒﺧﺶﻏچﺯﻑﻉﺡﺞﻗﺹۍژﻂﻜﺌﺿﻰﻇﺙﺫﺁ۶گہﺅےﺀﺓﺃھۀﺇﺉًَﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_'|^W}AJCH+$SDTZEQGF%_="
+farsi_alphabet = "u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654'"
+farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzﺀﺁﺃﺆﺋﺎﺑپﺖﺜﺟچﺢﺤﺧﺩﺫﺭﺯژﺲﺸﺼﻀﻄﻈﻌﻐﻔﻗکگﻞﻤﻨﻫﻭیًٔ_'|^W}AJCH+$SDTZEQGF%_=" + farsi_alphabet
 farsi_vowels = "‬ًًٌَُِّْﻭﺍېﻱﻯیےۍ"
 farsi_diacs = ""
 
@@ -106,10 +104,16 @@ pashto_character_mappings = {
 }
 
 farsi_character_mappings = {
-    'ﺁ': "ا",
-    'ﺃ': "ا",
-    'ا': "آ",
-    'ٓا': "آ",
+    'آ': "u\'u0\627'",
+    "u\'u0622'": "u\'u0627'",
+    "u\'u0623'": "u\'u0627'",
+    "u\'u0624'": "u\'u0648'",
+    "u\'u0626'": "u\'u06cc'",
+    "u\'u0649'": "u\'u06cc'",
+    "u\'u06BE'": "u\'u0647'",
+    "u\'u06C0'": "u\'u0647'",
+    "u\'u0629'": "u\'u062a'",
+    "u\'u0625'": "u\'u0627'",
     'ي': "ی",
     'ﺅ': "و",
     'ﺉ': "ی",
@@ -119,6 +123,8 @@ farsi_character_mappings = {
     'ﻙ': 'ک',
     'گ': 'ګ',
     'ﺉ': 'ﺉ',
+    "u'\u064A'" : "u'\u06CC'",
+    "u'\u0643'" : "u'\u06A9'",
     'ﺀ': '۶',
     'ہ': 'ﻩ',
     'ھ': 'ﻩ',
@@ -127,13 +133,13 @@ farsi_character_mappings = {
     'ٸ': 'ﺉ',
     'ﺅ': 'ﻭ',
     'ﻻ': 'ﻻ',
-    'ۓ': 'ﻱ',
-    'ے': 'ﻱ',
-    'ﮮ': 'ﻱ',
-    'ۍ': 'ﻱ',
-    'ی': 'ﻱ',
-    'ﻯ': 'ﻱ',
-    'ې': 'ﻱ',
+    'ۓ': "u'\u06CC'",
+    'ے': "u'\u06CC'",
+    'ﮮ': "u'\u06CC'",
+    'ۍ': "u'\u06CC'",
+    'ی': "u'\u06CC'",
+    'ﻯ': "u'\u06CC'",
+    'ې': "u'\u06CC'",
     'ﺇ': 'ﺍ',
     'ﺁ': 'ﺍ',
     'ﺃ': 'ﺍ',
