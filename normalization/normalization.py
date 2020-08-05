@@ -8,6 +8,7 @@ Updated on April 9th, 2020
 import sys
 import re
 import unicodedata
+import difflib
 
 english_alphabet = "abcdefghijklmnopqrstuvwxyz"
 english_vowels = "aeiou"
@@ -81,7 +82,7 @@ pashto_character_mappings = {
     'ك': 'ک',
     'گ': 'ګ',
     'ﺉ': 'ئ',
-    'ء': '۶',
+    'ء': '6',
     'ہ': 'ه',
     'ھ': 'ه',
     '۵': '٥',
@@ -121,17 +122,15 @@ farsi_character_mappings = {
     'ﻕ': 'ک',
     'ﻑ': 'پ',
     'ﻙ': 'ک',
-    'گ': 'ګ',
-    'ﺉ': 'ﺉ',
     u'\u064A' : u'\u06CC',
     u'\u0643' : u'\u06A9',
     'ﺀ': '۶',
-    'ہ': 'ﻩ',
-    'ھ': 'ﻩ',
-    '۵': '٥',
-    '۴': '٤',
-    'ٸ': 'ﺉ',
-    'ﺅ': 'ﻭ',
+    'ہ': u'\u0647',
+    'ھ': u'\u0647',
+    '۵': '5',
+    '۴': '4',
+    'ٸ': u'\u06cc',
+    'ﺅ': u'\u0648',
     'ﻻ': 'ﻻ',
     'ۓ': u'\u06CC',
     'ے': u'\u06CC',
@@ -140,11 +139,11 @@ farsi_character_mappings = {
     'ی': u'\u06CC',
     'ﻯ': u'\u06CC',
     'ې': u'\u06CC',
-    'ﺇ': 'ﺍ',
-    'ﺁ': 'ﺍ',
-    'ﺃ': 'ﺍ',
-    'ﺓ': 'ﻩ',
-    'ۀ': 'ﻩ',
+    'ﺇ': u'\u0627',
+    'ﺁ': u'\u0627',
+    'ﺃ': u'\u0627',
+    'ﺓ': u'\u0647',
+    'ۀ': u'\u0647'
 }
 
 #source: https://www.loc.gov/catdir/cpso/romanization/bulgarian.pdf
@@ -281,8 +280,9 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
 
     if language == "FAS":
         for key in farsi_character_mappings:
+            old_text = text
             text = re.sub(r''+key, farsi_character_mappings[key], text)
-                
+  
     '''Prepare the lists of the letters to be explictily kept and removed'''
     letters_in = list(letters_to_keep)
     letters_out = list(letters_to_remove)
