@@ -34,7 +34,8 @@ pashto_romanized_alphabet = "abcdefghijklmnopqrstuvwxyzواهدرنلیيېمک�
 pashto_vowels = "واېيىیےۍ"
 pashto_diacs = "ًٌٍَُِّْ"
 
-farsi_alphabet = u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654'
+farsi_numbers = u'\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'
+farsi_alphabet = u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654' + farsi_numbers
 farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyz_'|^W}AJCH+$SDTZEQGF%_=" + farsi_alphabet
 farsi_vowels = "‬ًًٌَُِّْﻭﺍېﻱﻯیےۍ"
 farsi_diacs = ""
@@ -127,8 +128,8 @@ farsi_character_mappings = {
     'ﺀ': '۶',
     'ہ': u'\u0647',
     'ھ': u'\u0647',
-    '۵': '5',
-    '۴': '4',
+    '۵': u'\u06f5',
+    '۴': u'\u06f4',
     'ٸ': u'\u06cc',
     'ﺅ': u'\u0648',
     'ﻻ': 'ﻻ',
@@ -143,7 +144,29 @@ farsi_character_mappings = {
     'ﺁ': u'\u0627',
     'ﺃ': u'\u0627',
     'ﺓ': u'\u0647',
-    'ۀ': u'\u0647'
+    'ۀ': u'\u0647',
+    u'\u0660': u'\u06f0',
+    u'\u0661': u'\u06f1',
+    u'\u0662': u'\u06f2',
+    u'\u0663': u'\u06f3',
+    u'\u0664': u'\u06f4',
+    u'\u0665': u'\u06f5',
+    u'\u0666': u'\u06f6',
+    u'\u0667': u'\u06f7',
+    u'\u0668': u'\u06f8',
+    u'\u0669': u'\u06f9',
+    u'\u06a9': u'\u0643',
+    '0': u'\u06f0',
+    '1': u'\u06f1',
+    '2': u'\u06f2',
+    '3': u'\u06f3',
+    '4': u'\u06f4',
+    '5': u'\u06f5',
+    '6': u'\u06f6',
+    '7': u'\u06f7',
+    '8': u'\u06f8',
+    '9': u'\u06f9',
+
 }
 
 #source: https://www.loc.gov/catdir/cpso/romanization/bulgarian.pdf
