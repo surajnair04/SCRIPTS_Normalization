@@ -1,5 +1,6 @@
 '''
-Updated on April 9th, 2020
+Updated on August 6th, 2020, 2:01am
+Version 2.0
 
 @author: reskander
 '''
