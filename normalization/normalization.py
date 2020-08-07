@@ -9,7 +9,6 @@ Version 2.0
 import sys
 import re
 import unicodedata
-import difflib
 
 english_alphabet = "abcdefghijklmnopqrstuvwxyz"
 english_vowels = "aeiou"
@@ -36,7 +35,7 @@ pashto_vowels = "واېيىیےۍ"
 pashto_diacs = "ًٌٍَُِّْ"
 
 farsi_numbers = u'\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'
-farsi_alphabet = u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654' + farsi_numbers
+farsi_alphabet = u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654=' + farsi_numbers
 farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyz_'|^W}AJCH+$SDTZEQGF%_=" + farsi_alphabet
 farsi_vowels = "‬ًًٌَُِّْﻭﺍېﻱﻯیےۍ" + u'\u0650\u064B\u064E\u064F\u0652\u064C\u064C\u064D'
 farsi_diacs = "" + u'\u0651'
@@ -107,7 +106,8 @@ pashto_character_mappings = {
 }
 
 farsi_character_mappings = {
-    'آ': u'\u0627',
+   '=': u'\u200c',
+   'آ': u'\u0627',
     u'\u0622': u'\u0627',
     u'\u0623': u'\u0627',
     u'\u0624': u'\u0648',
@@ -323,7 +323,7 @@ farsi_transliteration = {
     'ً': "F",
     "'": "%",
     '_': "_",
-    '‌': "=",
+#    '‌': "=",
 }
 
 def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=True, remove_repetitions_count=-1, remove_punct=True, remove_digits=True, remove_vowels=False, remove_diacritics=True, remove_spaces=False, remove_apostrophe=True, copy_through=True, keep_romanized_text=True):
@@ -370,7 +370,6 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
 
     if language == "FAS":
         for key in farsi_character_mappings:
-            old_text = text
             text = re.sub(r''+key, farsi_character_mappings[key], text)
   
     '''Prepare the lists of the letters to be explictily kept and removed'''
@@ -390,7 +389,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
 
     '''Remove punctuation marks, if required'''
     if remove_punct == True:
-        text = re.sub(r"[^\w\s\'\َ\ً\ُ\ِ\ْ\ّ\ٌ\ٍ]",'', text)
+        text = re.sub(r"[^\w\s\'\َ\ً\ُ\ِ\ْ\ّ\ٌ\ٍ۰]",'', text)
         text = re.sub(r"(^|\s)[\']", r'\1', text)
 
     '''Remove digits, if required'''
