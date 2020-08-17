@@ -1,6 +1,6 @@
 '''
-Updated on August 12th, 2020, 0:38am
-Version 2.1b
+Updated on August 17th, 2020, 4:40pm
+Version 2.2b
 
 @author: reskander
 '''
@@ -38,7 +38,7 @@ farsi_numbers = u'\u06f0\u06f1\u06f2\u06f3\u06f4\u06f5\u06f6\u06f7\u06f8\u06f9'
 farsi_alphabet = u'\u0621\u0622\u0623\u0624\u0626\u0627\u0628\u067e\u062a\u062b\u062c\u0686\u062d\u062e\u062f\u0630\u0631\u0632\u0698\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u06a9\u06af\u0644\u0645\u0646\u0647\u0648\u06cc\u064b\u0654=' + farsi_numbers
 farsi_romanized_alphabet = "abcdefghijklmnopqrstuvwxyz_'|^W}AJCH+$SDTZEQGF%_=" + farsi_alphabet
 farsi_vowels = "‬ًًٌَُِّْﻭﺍېﻱﻯیےۍ" + u'\u0650\u064B\u064E\u064F\u0652\u064C\u064C\u064D'
-farsi_diacs = "" + u'\u0651'
+farsi_diacs = pashto_diacs + u'\u0640\u0651'
 
 alphabet_map = {}
 alphabet_map["ENG"] = english_alphabet;
@@ -111,7 +111,7 @@ farsi_character_mappings = {
     u'\u0649': u'\u06cc',
     u'\u06BE': u'\u0647',
     u'\u06C0': u'\u0647',
-    u'\u0629': u'\u062a',
+    u'\u0629': u'\u0647',
     u'\u0625': u'\u0627',
     'ي': u'\u06CC',
     'ﺅ': u'\u0648',
@@ -187,7 +187,7 @@ farsi_character_mappings = {
     u'\uFE98': u'\u062a',
     u'\uFEE4': u'\u0645',
     u'\uFEB8': u'\u0634',
-    u'\uFEDB': u'\u06af',
+    u'\uFEDB': u'\u06a9',
     u'\u05D1': u'\u067e',
     u'\uFEAF': u'\u0632',
     u'\uFECB': u'\u0639',
@@ -222,7 +222,7 @@ farsi_character_mappings = {
     u'\uFECF': u'\u063a',
     u'\uFECF': u'\u063a',
     u'\u0142': 'l',
-    u'\uFEDC': u'\u06af',
+    u'\uFEDC': u'\u06a9',
     u'\uFED4': u'\u0641',
     u'\u067c': u'\u062a',
     u'\u067c': u'\u062d',
