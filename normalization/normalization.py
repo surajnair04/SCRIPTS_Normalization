@@ -1,6 +1,6 @@
 '''
-Updated on August 17th, 2020, 4:35pm
-Version 2.2
+Updated on October 20th, 2020
+Version 3.0
 
 @author: reskander
 '''
@@ -81,52 +81,6 @@ latin_character_mappings = {
     'ų': 'u',
     'ū': 'u',
     'ž': 'z',
-}
-
-#source: https://www.loc.gov/catdir/cpso/romanization/bulgarian.pdf
-bulgarian_transliteration = {
-    'ch': 'ч',
-    'ja': 'я',
-    'ju': 'ю',
-    'kh': 'х',
-    'sht': 'щ',
-    'sht': 'щ',
-    'sh': 'ш',
-    'ya': 'я',
-    'yu': 'ю',
-    'zh': 'ж',
-    'a': 'а',
-    'b': 'б',
-    'c': 'ц',
-    'd': 'д',
-    'e': 'е',
-    'f': 'ф',
-    'g': 'г',
-    'h': 'х',
-    'i': 'и',
-    'j': 'й',
-    'k': 'к',
-    'l': 'л',
-    'm': 'м',
-    'n': 'н',
-    'o': 'о',
-    'p': 'п',
-    'r': 'р',
-    's': 'с',
-    't': 'т',
-    'u': 'у',
-    'v': 'в',
-    'x': 'х',
-    'y': 'й',
-    'z': 'з',
-    'ŭ': 'Ъ',
-    '′': 'ь',
-    '″': 'ъ',
-    'i͡e': 'ѣ',
-    'i͡a': 'я',
-    'i͡u': 'ю',
-    'ĭ': 'й',
-    'u̐': 'ѫ'
 }
 
 ''' Special transformation for Pashto '''
@@ -313,7 +267,7 @@ farsi_character_mappings = {
     'ﯼ': 'ی',
     'ے': 'ه',
     'ﮯ': 'ی',
-    # numbers
+    #numbers
     '٤': '۴',
     '٥': '۵',
     '٦': '۶',
@@ -327,6 +281,96 @@ farsi_character_mappings = {
     '7': '۷',
     '8': '۸',
     '9': '۹'
+}
+
+#source: https://www.loc.gov/catdir/cpso/romanization/bulgarian.pdf
+bulgarian_transliteration = {
+    'ch': 'ч',
+    'ja': 'я',
+    'ju': 'ю',
+    'kh': 'х',
+    'sht': 'щ',
+    'sht': 'щ',
+    'sh': 'ш',
+    'ya': 'я',
+    'yu': 'ю',
+    'zh': 'ж',
+    'a': 'а',
+    'b': 'б',
+    'c': 'ц',
+    'd': 'д',
+    'e': 'е',
+    'f': 'ф',
+    'g': 'г',
+    'h': 'х',
+    'i': 'и',
+    'j': 'й',
+    'k': 'к',
+    'l': 'л',
+    'm': 'м',
+    'n': 'н',
+    'o': 'о',
+    'p': 'п',
+    'r': 'р',
+    's': 'с',
+    't': 'т',
+    'u': 'у',
+    'v': 'в',
+    'x': 'х',
+    'y': 'й',
+    'z': 'з',
+    'ŭ': 'Ъ',
+    '′': 'ь',
+    '″': 'ъ',
+    'i͡e': 'ѣ',
+    'i͡a': 'я',
+    'i͡u': 'ю',
+    'ĭ': 'й',
+    'u̐': 'ѫ'
+}
+
+farsi_transliteration = {
+    'ء': "'",
+    'آ': "|",
+    'أ': "^",
+    'ؤ': "W",
+    'ئ': "}",
+    'ا': "A",
+    'ب': "b",
+    'پ': "p",
+    'ت': "t",
+    'ث': "v",
+    'ج': "J",
+    'چ': "C",
+    'ح': "H",
+    'خ': "x",
+    'د': "d",
+    'ذ': "+",
+    'ر': "r",
+    'ز': "z",
+    'ژ': "c",
+    'س': "s",
+    'ش': "$",
+    'ص': "S",
+    'ض': "D",
+    'ط': "T",
+    'ظ': "Z",
+    'ع': "E",
+    'غ': "g",
+    'ف': "f",
+    'ق': "q",
+    'ک': "Q",
+    'گ': "G",
+    'ل': "l",
+    'م': "m",
+    'ن': "n",
+    'ه': "h",
+    'و': "w",
+    'ی': "y",
+    'ً': "F",
+    "'": "%",
+    '_': "_",
+#    '‌': "=",
 }
 
 def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=False, remove_repetitions_count=-1, remove_punct=False, remove_digits=False, remove_vowels=False, remove_diacritics=True, remove_spaces=False, remove_apostrophe=False, copy_through=True, keep_romanized_text=True):
