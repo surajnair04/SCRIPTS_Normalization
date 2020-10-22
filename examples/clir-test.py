@@ -10,5 +10,18 @@ if __name__=="__main__":
         line = line.strip()
         if not line: continue
         line = " ".join(tokenizer(punct_norm(line)))
-        line = normalization.process(lang, line, copy_through=False, keep_romanized_text=False)
+        normalized_text = normalization.process(lang, 
+                                                line, 
+                                                letters_to_keep='', 
+                                                letters_to_remove='', 
+                                                lowercase=True, 
+                                                remove_repetitions_count=-1, 
+                                                remove_punct=True,
+                                                remove_digits=True,
+                                                remove_vowels=False,
+                                                remove_diacritics=True,
+                                                remove_spaces=False,
+                                                remove_apostrophe=True,
+                                                copy_through=False,
+                                                keep_romanized_text=False)
         print(line)
