@@ -412,6 +412,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
 
     '''Remove extras, e.g., non-zero width jopiner'''
     text = re.sub(extras, '', text)
+    text = "".join([c for c in text if c.isprintable()])
 
     '''Transliteration for Bulgarian'''
     if language == "BUL" and not keep_romanized_text:
