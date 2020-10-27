@@ -1,6 +1,6 @@
 '''
-Updated on October 20th, 2020
-Version 3.0
+Updated on October 27th, 2020
+Version 3.1
 
 @author: reskander
 '''
@@ -446,7 +446,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
     '''Remove punctuation marks, if required'''
     if remove_punct == True:
         text = re.sub(punctuation_symbol, '', text)
-        text = re.sub("(^|\s)[\']", '\1', text)
+        text = re.sub("(^|\s)[\']", '\\1', text)
 
     '''Remove digits, if required'''
     if remove_digits == True:

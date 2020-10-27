@@ -1,4 +1,4 @@
-NORMALIZATION V3.0 - 10/2020
+NORMALIZATION V3.1 - 10/2020
 Ramy Eskander
 rnd2110@columbia.edu
 =================================
