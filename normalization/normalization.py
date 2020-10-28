@@ -466,7 +466,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
 
     '''Remove spaces, if required.'''
     if remove_spaces == True:
-        text = re.sub('\s', '', text)
+        text = "".join([c for c in text if not c.isspace()])
 
     '''Loop over the unique characters in the text'''
     for char in list(set(text)):
