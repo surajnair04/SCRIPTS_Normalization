@@ -16,7 +16,7 @@ digit = '[0123456789٠١۲٢٣٤٥٦٧٨٩۰۴۵۶౦౧౨౩౪౫౬౭౮౯
 
 number = '^\%?'+digit+'+(([\.\,\:\-\/\٫])?'+digit+')*$'
 
-extras = "[\u200c\u0640\u200e\u200f\u200b\ufeff\u200a\u202b\u200d\u2009\ufe0f]"
+extras = "[\u200c\u0640\ufe0f]"
 
 english_alphabet = "abcdefghijklmnopqrstuvwxyz"
 english_vowels = "aeiou"
@@ -410,7 +410,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
     letters_in = list(letters_to_keep)
     letters_out = list(letters_to_remove)
 
-    '''Remove extras, e.g., non-zero width jopiner'''
+    '''Remove extras, e.g., non-zero width jopiner, and non-printable characters'''
     text = re.sub(extras, '', text)
     text = "".join([c for c in text if c.isprintable()])
 
@@ -447,7 +447,8 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
     '''Remove punctuation marks, if required'''
     if remove_punct == True:
         text = re.sub(punctuation_symbol, '', text)
-        text = re.sub("(^|\s)[\']", '\\1', text)
+        text = re.sub("(^|\s)[\'](\s|$)", '\\1\\2', text)
+        text = re.sub('\s+', ' ', text)
 
     '''Remove digits, if required'''
     if remove_digits == True:
@@ -473,7 +474,7 @@ def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=
         #if (language == 'PUS' or language == "FAS") and ord(char) == 8204:
         #    continue
 
-        if (not char.isspace() and not re.match("[^\w\s]", char) and not re.match(punctuation_symbol, char) and not re.match(digit, char)) or char in alphabet:
+        if (not char.isspace() and char.isprintable() and not re.match(punctuation_symbol, char) and not re.match(digit, char) and not char == '\'') or char in alphabet:
             char_lower = char.lower()
             '''If the character is needed to be removed, remove it'''
             if char in letters_out:
