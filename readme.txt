@@ -1,4 +1,4 @@
-NORMALIZATION V3.1 - 10/2020
+NORMALIZATION V3.2 - 10/2020
 Ramy Eskander
 rnd2110@columbia.edu
 =================================
@@ -13,6 +13,10 @@ Currently Supported Languages:
 - Bulgarian
 - Pashto
 - Farsi
+
+Updates since V3.1
+================================
+Added support for characters that are first seen in 3S-EVAL.
 
 Usage (default config):
 ===========================
