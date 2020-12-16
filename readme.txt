@@ -1,4 +1,4 @@
-NORMALIZATION V3.2 - 10/2020
+NORMALIZATION V3.5 - 12/2020
 Ramy Eskander
 rnd2110@columbia.edu
 =================================
@@ -13,10 +13,15 @@ Currently Supported Languages:
 - Bulgarian
 - Pashto
 - Farsi
+- Kazakh
 
-Updates since V3.1
+Updates since V3.2
 ================================
-Added support for characters that are first seen in 3S-EVAL.
+- Added support for Kazakh
+- Better coverage of punctuation marks, numbers and symbols.
+- Numbers are checked before punctuation removal, so that numeric periods, for instance, remain intact.
+- '&' is treated as a punctuation mark (as Python built-in punctuation checks are used)
+- Isolated single quotations are differentiated from apostrophes.
 
 Usage (default config):
 ===========================
@@ -44,6 +49,11 @@ Note: In the case of Pashto, text cleanup is always performed. This includes:
 1- Converting some letters that are not in the original Pashto and Farsi scripts to their Pashto cognates
 2- Normalizing the orthography by resolving the cases where two or more letters are used interchangeably (in an inconsistent manner)
 3- (1) and (2) can be overwritten by using the letters_to_keep parameter.
+4- In the case of Kazakh: 
+ --- Arabic letters are always transliterated into Cyrillic. 
+ --- Latin letters are transliterated when keep_romanized_text is set to False. 
+ --- Latin homoglyphs are transliterated if the text has at least one Cyrillic character that belongs to the Kazakh script.
+ --- Kazakh extended Cyrillic letters are not transliterated into regular Cyrillic.
 
 
 
