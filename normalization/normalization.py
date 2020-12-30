@@ -8,7 +8,7 @@ Version 3.5
 
 import unicodedata
 
-from constants import *
+from .constants import *
 
 def process(language, text, letters_to_keep='', letters_to_remove='', lowercase=False, remove_repetitions_count=-1, remove_punct=False, remove_digits=False, remove_vowels=False, remove_diacritics=True, remove_spaces=False, remove_apostrophe=False, copy_through=True, keep_romanized_text=True):
 
